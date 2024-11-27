@@ -1,5 +1,11 @@
-const buildMakePerson = ({ getUUID, getAge }) => {
-  return ({ name, birthdate }) => {
+const buildMakePerson = ({
+  getUUID,
+  getAge,
+}: {
+  getUUID: Function;
+  getAge: Function;
+}) => {
+  return ({ name, birthdate }: { name: string; birthdate: string }) => {
     return {
       id: getUUID(),
       name,
@@ -15,4 +21,4 @@ const john = buildPerson(obj);
 
 console.log(john); */
 
-module.exports = { buildMakePerson };
+export { buildMakePerson };

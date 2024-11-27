@@ -1,5 +1,5 @@
 const characters = ["Flash", "Superman", "Green Lanter", "Batman"];
 
-const [, , , batman] = characters;
+export default characters;
 
-console.log(batman);
+const [, , , batman] = characters;
