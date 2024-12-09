@@ -1,10 +1,9 @@
-const buildMakePerson = ({
-  getUUID,
-  getAge,
-}: {
-  getUUID: Function;
-  getAge: Function;
-}) => {
+type TbuildMakePerson = {
+  getUUID: () => string;
+  getAge: (birthdate: string) => number;
+};
+
+const buildMakePerson = ({ getUUID, getAge }: TbuildMakePerson) => {
   return ({ name, birthdate }: { name: string; birthdate: string }) => {
     return {
       id: getUUID(),

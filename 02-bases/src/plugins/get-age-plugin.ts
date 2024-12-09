@@ -1,8 +1,5 @@
-import getAgePlugin from "get-age";
-
-const getAge = (birthdate: string): string | Error => {
-  if (!birthdate) return new Error("birthdate is required");
-  return getAgePlugin(birthdate);
+const getAge = (birthdate: string): number => {
+  return new Date().getFullYear() - new Date(birthdate).getFullYear();
 };
 
 export { getAge };

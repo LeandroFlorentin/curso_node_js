@@ -1,10 +1,13 @@
-import { http } from "../plugins/index.js";
+import { http } from "../plugins/http-client";
 
 const getPokemonById = async (id: number): Promise<string> => {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const response = await http.get(url);
-  const pokemon = await response.json();
-  return pokemon.name;
+  try {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const pokemon = await http.get(url);
+    return pokemon.name;
+  } catch (error) {
+    throw "Pokemon not found with id " + id;
+  }
 };
 
 export { getPokemonById };
