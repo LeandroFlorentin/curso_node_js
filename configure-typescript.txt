@@ -1,0 +1,2 @@
+npm i -D typescript @types/node ts-node nodemon rimraf
+npx tsc --init --outDir dist/ --rootDir src
