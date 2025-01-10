@@ -13,10 +13,11 @@ export class CreateTable implements CreateTableUseCase {
      *DI - Dependency Injection
      */
   }
-  execute({ base, limit = 10 }: CreateTableOptions) {
+  execute({ base, limit = 10 }: CreateTableOptions): string {
     let text = "";
     for (let i = 1; i < limit + 1; i++) {
-      text += `${base} x ${i} = ${base * i}\n`;
+      text += `${base} x ${i} = ${base * i}`;
+      if (i < limit) text += "\n";
     }
     return text;
   }
